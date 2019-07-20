@@ -19,9 +19,6 @@ import javax.persistence.Table;
 @Table(name = "train")
 public class Ticket implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2023892079415198484L;
 	private BigInteger id;
 	private Integer capacity;
@@ -38,6 +35,43 @@ public class Ticket implements Serializable {
 	private LocalDateTime cancellationDate;
 
 	public Ticket() {
+	}
+
+	public Ticket(Integer capacity, BigDecimal price, User user, Train train, LocalDateTime bookingDate,
+			LocalDateTime journeyDate, LocalDateTime departureTime, LocalDateTime arrivalTime, Station departureStation,
+			Station arrivalStation, Boolean isCancelled, LocalDateTime cancellationDate) {
+		super();
+		this.capacity = capacity;
+		this.price = price;
+		this.user = user;
+		this.train = train;
+		this.bookingDate = bookingDate;
+		this.journeyDate = journeyDate;
+		this.departureTime = departureTime;
+		this.arrivalTime = arrivalTime;
+		this.departureStation = departureStation;
+		this.arrivalStation = arrivalStation;
+		this.isCancelled = isCancelled;
+		this.cancellationDate = cancellationDate;
+	}
+
+	public Ticket(BigInteger id, Integer capacity, BigDecimal price, User user, Train train, LocalDateTime bookingDate,
+			LocalDateTime journeyDate, LocalDateTime departureTime, LocalDateTime arrivalTime, Station departureStation,
+			Station arrivalStation, Boolean isCancelled, LocalDateTime cancellationDate) {
+		super();
+		this.id = id;
+		this.capacity = capacity;
+		this.price = price;
+		this.user = user;
+		this.train = train;
+		this.bookingDate = bookingDate;
+		this.journeyDate = journeyDate;
+		this.departureTime = departureTime;
+		this.arrivalTime = arrivalTime;
+		this.departureStation = departureStation;
+		this.arrivalStation = arrivalStation;
+		this.isCancelled = isCancelled;
+		this.cancellationDate = cancellationDate;
 	}
 
 	@Id

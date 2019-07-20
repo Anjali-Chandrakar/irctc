@@ -4,14 +4,16 @@ import java.io.Serializable;
 import java.math.BigInteger;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "passenger")
 public class Passenger implements Serializable{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 7952203179917731421L;
 	private BigInteger id;
 	private String name;
@@ -21,8 +23,13 @@ public class Passenger implements Serializable{
 	public Passenger() {
 		super();
 	}
-	
-	
+
+	public Passenger(String name, String gender, int age) {
+		super();
+		this.name = name;
+		this.gender = gender;
+		this.age = age;
+	}
 
 	public Passenger(BigInteger id, String gender ,String name, int age) {
 		super();

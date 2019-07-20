@@ -1,5 +1,6 @@
 package com.irctc.model;
 import java.io.Serializable;
+import java.math.BigInteger;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,92 +12,83 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "schedule")
 public class Schedule implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -3739060601556572711L;
 
-	@Id
-	@Column(name="SCHEDULE_ID")
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long scheduleId;
-	
-	@Column(name="STATION")
-	@Enumerated(EnumType.STRING)
+	private static final long serialVersionUID = -3739060601556572711L;
+	private BigInteger id;
 	private Station stop;
-	
-	@Column(name="DEPART_TIME_AT_STATION")
 	private String departTime;
-	
-	@Column(name="ARRIVAL_TIME_AT_STATION")
 	private String arrivalTime;
-	
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn (name ="TRAIN_ID")
 	private Train train;
 	
-	public Schedule()
-	{
-		super();
+	public Schedule() {
 	}
 
-	public Schedule(long scheduleId, Station stop, String departTime, String arrivalTime, Train train) {
+	public Schedule(Station stop, String departTime, String arrivalTime, Train train) {
 		super();
-		this.scheduleId = scheduleId;
 		this.stop = stop;
 		this.departTime = departTime;
 		this.arrivalTime = arrivalTime;
 		this.train = train;
 	}
 
-	public long getScheduleId() {
-		return scheduleId;
+	public Schedule(BigInteger id, Station stop, String departTime, String arrivalTime, Train train) {
+		super();
+		this.id = id;
+		this.stop = stop;
+		this.departTime = departTime;
+		this.arrivalTime = arrivalTime;
+		this.train = train;
 	}
 
-	public void setScheduleId(long scheduleId) {
-		this.scheduleId = scheduleId;
+	@Id
+	@Column(name="schedule_id")
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	public BigInteger getId() {
+		return id;
+	}
+	public void setId(BigInteger id) {
+		this.id = id;
 	}
 
+	@Column(name="station")
+//	@Enumerated(EnumType.STRING)
 	public Station getStop() {
 		return stop;
 	}
-
 	public void setStop(Station stop) {
 		this.stop = stop;
 	}
 
+	@Column(name="depart_time")
 	public String getDepartTime() {
 		return departTime;
 	}
-
 	public void setDepartTime(String departTime) {
 		this.departTime = departTime;
 	}
 
+	@Column(name="arrival_time")
 	public String getArrivalTime() {
 		return arrivalTime;
 	}
-
 	public void setArrivalTime(String arrivalTime) {
 		this.arrivalTime = arrivalTime;
 	}
 
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn (name ="train_id")
 	public Train getTrain() {
 		return train;
 	}
-
 	public void setTrain(Train train) {
 		this.train = train;
 	}
 
-	@Override
-	public String toString() {
-		return "Schedule [scheduleId=" + scheduleId + ", stop=" + stop + ", departTime=" + departTime + ", arrivalTime="
-				+ arrivalTime + ", train=" + train + "]";
-	}
 
 
 }

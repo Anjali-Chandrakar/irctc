@@ -14,15 +14,23 @@ public class Train implements java.io.Serializable{
 
 	private static final long serialVersionUID = 2836462165015149465L;
 	private BigInteger id;
+	private String trainName;
 	private Integer capacity;
 
 	public Train() {
 		super();
 	}
 	
-	public Train(BigInteger id, Integer capacity) {
+	public Train(String trainName, Integer capacity) {
+		super();
+		this.trainName = trainName;
+		this.capacity = capacity;
+	}
+
+	public Train(BigInteger id, String trainName, Integer capacity) {
 		super();
 		this.id = id;
+		this.trainName = trainName;
 		this.capacity = capacity;
 	}
 
@@ -36,6 +44,14 @@ public class Train implements java.io.Serializable{
 		this.id = id;
 	}
 	
+	@Column(name="train_name", nullable = false, length = 20)
+	public String getTrainName() {
+		return trainName;
+	}
+	public void setTrainName(String trainName) {
+		this.trainName = trainName;
+	}
+
 	@Column(name="capacity")
 	public Integer getCapacity() {
 		return capacity;
@@ -46,6 +62,6 @@ public class Train implements java.io.Serializable{
 
 	@Override
 	public String toString() {
-		return "Train [id=" + id + ", capacity=" + capacity + "]";
+		return "Train [id=" + id + ", trainName=" + trainName + ", capacity=" + capacity + "]";
 	}
 }

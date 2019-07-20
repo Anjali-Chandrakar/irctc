@@ -8,25 +8,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "user")
 public class User implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4571972748358164033L;
 	private BigInteger id;
 	private String email;
 	private String name;
 	private int age;
-	//private Gender g;
 
 	public User() {
 		super();
 	}
 	
-	
+	public User(String email, String name, int age) {
+		super();
+		this.email = email;
+		this.name = name;
+		this.age = age;
+	}
 
 	public User(BigInteger id, String email, String name, int age) {
 		super();
@@ -39,11 +42,10 @@ public class User implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id")
-	public BigInteger getUserId() {
+	public BigInteger getId() {
 		return id;
 	}
-
-	public void setUserId(BigInteger id) {
+	public void setId(BigInteger id) {
 		this.id = id;
 	}
 

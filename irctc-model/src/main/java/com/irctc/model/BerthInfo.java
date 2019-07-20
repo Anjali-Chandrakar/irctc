@@ -16,9 +16,6 @@ import javax.persistence.Table;
 @Table(name = "berth_info")
 public class BerthInfo implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -6644622583836616781L;
 	private Long id;
 	private Train train;
@@ -29,6 +26,25 @@ public class BerthInfo implements Serializable{
 
 	public BerthInfo() {
 		super();
+	}
+	
+	public BerthInfo(Train train, Ticket ticket, Passenger passenger, Integer seat, Boolean isCancelled) {
+		super();
+		this.train = train;
+		this.ticket = ticket;
+		this.passenger = passenger;
+		this.seat = seat;
+		this.isCancelled = isCancelled;
+	}
+
+	public BerthInfo(Long id, Train train, Ticket ticket, Passenger passenger, Integer seat, Boolean isCancelled) {
+		super();
+		this.id = id;
+		this.train = train;
+		this.ticket = ticket;
+		this.passenger = passenger;
+		this.seat = seat;
+		this.isCancelled = isCancelled;
 	}
 
 	@Id
