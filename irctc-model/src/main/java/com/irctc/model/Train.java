@@ -36,7 +36,7 @@ public class Train implements java.io.Serializable{
 		this.id = id;
 	}
 	
-	@Column(name="CAPACITY")
+	@Column(name="capacity")
 	public Integer getCapacity() {
 		return capacity;
 	}

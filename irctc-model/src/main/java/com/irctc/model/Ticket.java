@@ -1,5 +1,6 @@
 package com.irctc.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
@@ -16,8 +17,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "train")
-public class Ticket {
+public class Ticket implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2023892079415198484L;
 	private BigInteger id;
 	private Integer capacity;
 	private BigDecimal price;

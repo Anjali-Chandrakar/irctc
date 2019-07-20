@@ -1,4 +1,6 @@
 package com.irctc.model;
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +13,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Schedule {
+public class Schedule implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3739060601556572711L;
+
 	@Id
 	@Column(name="SCHEDULE_ID")
 	@GeneratedValue(strategy=GenerationType.AUTO)

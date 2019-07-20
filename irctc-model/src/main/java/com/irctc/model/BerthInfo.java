@@ -1,5 +1,7 @@
 package com.irctc.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,8 +14,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "berth_info")
-public class BerthInfo {
+public class BerthInfo implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6644622583836616781L;
 	private Long id;
 	private Train train;
 	private Ticket ticket;
