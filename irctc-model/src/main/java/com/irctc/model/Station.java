@@ -1,17 +1,59 @@
 package com.irctc.model;
 
-public enum Station {
-	S0(0), S1(1), S2(2), S3(3), S4(4), S5(5), S6(6), S7(7), S8(8), S9(9), S10(10), S11(11), S12(12), S13(13), S14(14),
-	S15(15), S16(16), S17(17), S18(18), S19(19), S20(20);
+import java.io.Serializable;
+import java.math.BigInteger;
 
-	private int index;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-	private Station(int index) {
-		this.index = index;
+@Entity
+@Table(name="station")
+public class Station implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5252875615982832420L;
+	private BigInteger id;
+	private String station_name;
+	
+	public Station()
+	{
+		super();
 	}
-
-	public int getIndex() {
-		return index;
+	
+	public Station(String station_name) {
+		super();
+		this.station_name = station_name;
 	}
+	
+	public Station(BigInteger id, String station_name) {
+		super();
+		this.id = id;
+		this.station_name = station_name;
+	}
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id")
+	public BigInteger getId() {
+		return id;
+	}
+	public void setId(BigInteger id) {
+		this.id = id;
+	}
+	
+	@Column(name="name", nullable = false)
+	public String getStation_name() {
+		return station_name;
+	}
+	public void setStation_name(String station_name) {
+		this.station_name = station_name;
+	}
+	
+	
 
 }
