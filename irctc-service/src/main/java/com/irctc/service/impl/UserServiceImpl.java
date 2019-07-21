@@ -1,6 +1,5 @@
 package com.irctc.service.impl;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -70,11 +69,11 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public Map<String, Object>  readUser(BigInteger id) {
+	public Map<String, Object>  readUser(Integer id) {
 
 		Map<String, Object> responseMap = new LinkedHashMap<String, Object>();
 
-		if (id == null || id.intValue() <= 0){
+		if (id == null || id <= 0){
 			responseMap.put(Constants.STATUS, Constants.STATUS_ERROR);
 			responseMap.put(Constants.MESSAGE, "id can not be empty ,zero or less than zero");
 			return responseMap;
@@ -108,8 +107,8 @@ public class UserServiceImpl implements UserService{
 			return responseMap;
 		}
 
-		BigInteger id = userVo.getId();
-		if (id == null || id.intValue() <= 0){
+		Integer id = userVo.getId();
+		if (id == null || id <= 0){
 			responseMap.put(Constants.STATUS, Constants.STATUS_ERROR);
 			responseMap.put(Constants.MESSAGE, "id can not be empty ,zero or less than zero");
 			return responseMap;
@@ -142,11 +141,11 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public Map<String, Object> deleteUser(BigInteger id) {
+	public Map<String, Object> deleteUser(Integer id) {
 
 		Map<String, Object> responseMap = new LinkedHashMap<String, Object>();
 
-		if (id == null || id.intValue() <= 0){
+		if (id == null || id <= 0){
 			responseMap.put(Constants.STATUS, Constants.STATUS_ERROR);
 			responseMap.put(Constants.MESSAGE, "id can not be empty ,zero or less than zero");
 			return responseMap;

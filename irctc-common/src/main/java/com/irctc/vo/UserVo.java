@@ -1,12 +1,11 @@
 package com.irctc.vo;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 public class UserVo implements Serializable{
 
 	private static final long serialVersionUID = 8539820885339646418L;
-	private BigInteger id;
+	private Integer id;
 	private String email;
 	private String name;
 	private Integer age;
@@ -21,7 +20,7 @@ public class UserVo implements Serializable{
 		this.age = age;
 	}
 
-	public UserVo(BigInteger id, String email, String name, Integer age) {
+	public UserVo(Integer id, String email, String name, Integer age) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -29,10 +28,10 @@ public class UserVo implements Serializable{
 		this.age = age;
 	}
 
-	public BigInteger getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(BigInteger id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getEmail() {
