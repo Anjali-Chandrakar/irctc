@@ -4,108 +4,94 @@ import java.io.Serializable;
 import java.math.BigInteger;
 
 public class BerthInfoVo implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -3127806602455277606L;
+
+	private static final long serialVersionUID = 3256817098683187897L;
 	private Long id;
-	private BigInteger train;
-	private BigInteger ticket;
-	private BigInteger passenger;
+	private BigInteger trainId;
+	private BigInteger ticketId;
+	private BigInteger passengerId;
 	private Integer seat;
 	private Boolean isCancelled;
 	
 	public BerthInfoVo() {
 		super();
 	}
-
-
-	public BerthInfoVo(BigInteger train, BigInteger ticket, BigInteger passenger, Integer seat, Boolean isCancelled) {
+	
+	public BerthInfoVo(BigInteger trainId, BigInteger ticketId, BigInteger passengerId, Integer seat,
+			Boolean isCancelled) {
 		super();
-		this.train = train;
-		this.ticket = ticket;
-		this.passenger = passenger;
+		this.trainId = trainId;
+		this.ticketId = ticketId;
+		this.passengerId = passengerId;
 		this.seat = seat;
 		this.isCancelled = isCancelled;
 	}
 
-
-	public BerthInfoVo(Long id, BigInteger train, BigInteger ticket, BigInteger passenger, Integer seat,
+	public BerthInfoVo(Long id, BigInteger trainId, BigInteger ticketId, BigInteger passengerId, Integer seat,
 			Boolean isCancelled) {
 		super();
 		this.id = id;
-		this.train = train;
-		this.ticket = ticket;
-		this.passenger = passenger;
+		this.trainId = trainId;
+		this.ticketId = ticketId;
+		this.passengerId = passengerId;
 		this.seat = seat;
 		this.isCancelled = isCancelled;
 	}
-
 
 	public Long getId() {
 		return id;
 	}
 
-
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-
-	public BigInteger getTrain() {
-		return train;
+	public BigInteger getTrainId() {
+		return trainId;
 	}
 
-
-	public void setTrain(BigInteger train) {
-		this.train = train;
+	public void setTrainId(BigInteger trainId) {
+		this.trainId = trainId;
 	}
 
-
-	public BigInteger getTicket() {
-		return ticket;
+	public BigInteger getTicketId() {
+		return ticketId;
 	}
 
-
-	public void setTicket(BigInteger ticket) {
-		this.ticket = ticket;
+	public void setTicketId(BigInteger ticketId) {
+		this.ticketId = ticketId;
 	}
 
-
-	public BigInteger getPassenger() {
-		return passenger;
+	public BigInteger getPassengerId() {
+		return passengerId;
 	}
 
-
-	public void setPassenger(BigInteger passenger) {
-		this.passenger = passenger;
+	public void setPassengerId(BigInteger passengerId) {
+		this.passengerId = passengerId;
 	}
-
 
 	public Integer getSeat() {
 		return seat;
 	}
 
-
 	public void setSeat(Integer seat) {
 		this.seat = seat;
 	}
-
 
 	public Boolean getIsCancelled() {
 		return isCancelled;
 	}
 
-
 	public void setIsCancelled(Boolean isCancelled) {
 		this.isCancelled = isCancelled;
 	}
 
-
 	@Override
 	public String toString() {
-		return "BerthInfoVo [id=" + id + ", train=" + train + ", ticket=" + ticket + ", passenger=" + passenger
-				+ ", seat=" + seat + ", isCancelled=" + isCancelled + "]";
+		return "BerthInfoVo [id=" + id + ", trainId=" + trainId + ", ticketId=" + ticketId + ", passengerId="
+				+ passengerId + ", seat=" + seat + ", isCancelled=" + isCancelled + "]";
 	}
+	
+
 	
 }

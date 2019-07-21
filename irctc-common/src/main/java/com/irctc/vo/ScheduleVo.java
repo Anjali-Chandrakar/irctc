@@ -8,80 +8,64 @@ public class ScheduleVo implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 6373390425502679734L;
+	private static final long serialVersionUID = 8020716604025378871L;
 	private BigInteger id;
-	private BigInteger stop;
+	private BigInteger stopId;
 	private String departTime;
 	private String arrivalTime;
-	private BigInteger train;
-	
+	private BigInteger trainId;
 	public ScheduleVo() {
 		super();
 	}
-
-	public ScheduleVo(BigInteger stop, String departTime, String arrivalTime, BigInteger train) {
+	public ScheduleVo(BigInteger stopId, String departTime, String arrivalTime, BigInteger trainId) {
 		super();
-		this.stop = stop;
+		this.stopId = stopId;
 		this.departTime = departTime;
 		this.arrivalTime = arrivalTime;
-		this.train = train;
+		this.trainId = trainId;
 	}
-
-	public ScheduleVo(BigInteger id, BigInteger stop, String departTime, String arrivalTime, BigInteger train) {
+	public ScheduleVo(BigInteger id, BigInteger stopId, String departTime, String arrivalTime, BigInteger trainId) {
 		super();
 		this.id = id;
-		this.stop = stop;
+		this.stopId = stopId;
 		this.departTime = departTime;
 		this.arrivalTime = arrivalTime;
-		this.train = train;
+		this.trainId = trainId;
 	}
-
 	public BigInteger getId() {
 		return id;
 	}
-
 	public void setId(BigInteger id) {
 		this.id = id;
 	}
-
-	public BigInteger getStop() {
-		return stop;
+	public BigInteger getStopId() {
+		return stopId;
 	}
-
-	public void setStop(BigInteger stop) {
-		this.stop = stop;
+	public void setStopId(BigInteger stopId) {
+		this.stopId = stopId;
 	}
-
 	public String getDepartTime() {
 		return departTime;
 	}
-
 	public void setDepartTime(String departTime) {
 		this.departTime = departTime;
 	}
-
 	public String getArrivalTime() {
 		return arrivalTime;
 	}
-
 	public void setArrivalTime(String arrivalTime) {
 		this.arrivalTime = arrivalTime;
 	}
-
-	public BigInteger getTrain() {
-		return train;
+	public BigInteger getTrainId() {
+		return trainId;
 	}
-
-	public void setTrain(BigInteger train) {
-		this.train = train;
+	public void setTrainId(BigInteger trainId) {
+		this.trainId = trainId;
 	}
-
 	@Override
 	public String toString() {
-		return "ScheduleVo [id=" + id + ", stop=" + stop + ", departTime=" + departTime + ", arrivalTime=" + arrivalTime
-				+ ", train=" + train + "]";
+		return "ScheduleVo [id=" + id + ", stopId=" + stopId + ", departTime=" + departTime + ", arrivalTime="
+				+ arrivalTime + ", trainId=" + trainId + "]";
 	}
-	
-	
-	
+		
 }
