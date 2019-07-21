@@ -16,7 +16,7 @@ public class Station implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -5252875615982832420L;
+	private static final long serialVersionUID = -3330538684490466797L;
 	private BigInteger id;
 	private String station_name;
 	
@@ -52,6 +52,11 @@ public class Station implements Serializable {
 	}
 	public void setStation_name(String station_name) {
 		this.station_name = station_name;
+	}
+
+	@Override
+	public String toString() {
+		return "Station [id=" + id + ", station_name=" + station_name + "]";
 	}
 	
 	
