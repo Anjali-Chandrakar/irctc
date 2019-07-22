@@ -4,30 +4,30 @@ import java.io.Serializable;
 
 public class UserVo implements Serializable{
 
-	private static final long serialVersionUID = 8539820885339646418L;
 	private Integer id;
 	private String email;
 	private String name;
 	private Integer age;
-	
+	private Boolean isAdmin; 
+
 	public UserVo() {
+		super();
 	}
-	
-	public UserVo(String email, String name, Integer age) {
+	public UserVo(String email, String name, Integer age, Boolean isAdmin) {
 		super();
 		this.email = email;
 		this.name = name;
 		this.age = age;
+		this.isAdmin = isAdmin;
 	}
-
-	public UserVo(Integer id, String email, String name, Integer age) {
+	public UserVo(Integer id, String email, String name, Integer age, Boolean isAdmin) {
 		super();
 		this.id = id;
 		this.email = email;
 		this.name = name;
 		this.age = age;
+		this.isAdmin = isAdmin;
 	}
-
 	public Integer getId() {
 		return id;
 	}
@@ -53,9 +53,16 @@ public class UserVo implements Serializable{
 		this.age = age;
 	}
 
+	public Boolean getIsAdmin() {
+		return isAdmin;
+	}
+	public void setIsAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
 	@Override
 	public String toString() {
-		return "UserVo [id=" + id + ", email=" + email + ", name=" + name + ", age=" + age + "]";
+		return "UserVo [id=" + id + ", email=" + email + ", name=" + name + ", age=" + age + ", isAdmin=" + isAdmin
+				+ "]";
 	}
 	
 }

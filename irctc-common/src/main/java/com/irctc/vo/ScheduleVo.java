@@ -1,71 +1,164 @@
 package com.irctc.vo;
 
 import java.io.Serializable;
-import java.math.BigInteger;
+import java.time.LocalTime;
 
 public class ScheduleVo implements Serializable{
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 8020716604025378871L;
-	private BigInteger id;
-	private BigInteger stopId;
-	private String departTime;
-	private String arrivalTime;
-	private BigInteger trainId;
+	private static final long serialVersionUID = -7330828341298964620L;
+	private Integer id;
+	private Integer stopId;
+	private LocalTime departTime;
+	private LocalTime arrivalTime;
+	private Integer trainId;
+	private Boolean ismonday;
+	private Boolean istuesday;
+	private Boolean iswednesday;
+	private Boolean isthursday;
+	private Boolean isfriday;
+	private Boolean issaturday;
+	private Boolean issunday;
+	
+	
 	public ScheduleVo() {
 		super();
 	}
-	public ScheduleVo(BigInteger stopId, String departTime, String arrivalTime, BigInteger trainId) {
+	
+	public ScheduleVo(Integer stopId, LocalTime departTime, LocalTime arrivalTime, Integer trainId, Boolean ismonday,
+			Boolean istuesday, Boolean iswednesday, Boolean isthursday, Boolean isfriday, Boolean issaturday,
+			Boolean issunday) {
 		super();
 		this.stopId = stopId;
 		this.departTime = departTime;
 		this.arrivalTime = arrivalTime;
 		this.trainId = trainId;
+		this.ismonday = ismonday;
+		this.istuesday = istuesday;
+		this.iswednesday = iswednesday;
+		this.isthursday = isthursday;
+		this.isfriday = isfriday;
+		this.issaturday = issaturday;
+		this.issunday = issunday;
 	}
-	public ScheduleVo(BigInteger id, BigInteger stopId, String departTime, String arrivalTime, BigInteger trainId) {
+	
+	
+
+	public ScheduleVo(Integer id, Integer stopId, LocalTime departTime, LocalTime arrivalTime, Integer trainId,
+			Boolean ismonday, Boolean istuesday, Boolean iswednesday, Boolean isthursday, Boolean isfriday,
+			Boolean issaturday, Boolean issunday) {
 		super();
 		this.id = id;
 		this.stopId = stopId;
 		this.departTime = departTime;
 		this.arrivalTime = arrivalTime;
 		this.trainId = trainId;
+		this.ismonday = ismonday;
+		this.istuesday = istuesday;
+		this.iswednesday = iswednesday;
+		this.isthursday = isthursday;
+		this.isfriday = isfriday;
+		this.issaturday = issaturday;
+		this.issunday = issunday;
 	}
-	public BigInteger getId() {
+
+	public Integer getId() {
 		return id;
 	}
-	public void setId(BigInteger id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
-	public BigInteger getStopId() {
+	public Integer getStopId() {
 		return stopId;
 	}
-	public void setStopId(BigInteger stopId) {
+	public void setStopId(Integer stopId) {
 		this.stopId = stopId;
 	}
-	public String getDepartTime() {
+	public LocalTime getDepartTime() {
 		return departTime;
 	}
-	public void setDepartTime(String departTime) {
+	public void setDepartTime(LocalTime departTime) {
 		this.departTime = departTime;
 	}
-	public String getArrivalTime() {
+	public LocalTime getArrivalTime() {
 		return arrivalTime;
 	}
-	public void setArrivalTime(String arrivalTime) {
+	public void setArrivalTime(LocalTime arrivalTime) {
 		this.arrivalTime = arrivalTime;
 	}
-	public BigInteger getTrainId() {
+	public Integer getTrainId() {
 		return trainId;
 	}
-	public void setTrainId(BigInteger trainId) {
+	public void setTrainId(Integer trainId) {
 		this.trainId = trainId;
 	}
+
+	public Boolean getIsmonday() {
+		return ismonday;
+	}
+
+	public void setIsmonday(Boolean ismonday) {
+		this.ismonday = ismonday;
+	}
+
+	public Boolean getIstuesday() {
+		return istuesday;
+	}
+
+	public void setIstuesday(Boolean istuesday) {
+		this.istuesday = istuesday;
+	}
+
+	public Boolean getIswednesday() {
+		return iswednesday;
+	}
+
+	public void setIswednesday(Boolean iswednesday) {
+		this.iswednesday = iswednesday;
+	}
+
+	public Boolean getIsthursday() {
+		return isthursday;
+	}
+
+	public void setIsthursday(Boolean isthursday) {
+		this.isthursday = isthursday;
+	}
+
+	public Boolean getIsfriday() {
+		return isfriday;
+	}
+
+	public void setIsfriday(Boolean isfriday) {
+		this.isfriday = isfriday;
+	}
+
+	public Boolean getIssaturday() {
+		return issaturday;
+	}
+
+	public void setIssaturday(Boolean issaturday) {
+		this.issaturday = issaturday;
+	}
+
+	public Boolean getIssunday() {
+		return issunday;
+	}
+
+	public void setIssunday(Boolean issunday) {
+		this.issunday = issunday;
+	}
+
 	@Override
 	public String toString() {
 		return "ScheduleVo [id=" + id + ", stopId=" + stopId + ", departTime=" + departTime + ", arrivalTime="
-				+ arrivalTime + ", trainId=" + trainId + "]";
+				+ arrivalTime + ", trainId=" + trainId + ", ismonday=" + ismonday + ", istuesday=" + istuesday
+				+ ", iswednesday=" + iswednesday + ", isthursday=" + isthursday + ", isfriday=" + isfriday
+				+ ", issaturday=" + issaturday + ", issunday=" + issunday + "]";
 	}
-		
+	
+	
+	
 }

@@ -1,7 +1,6 @@
 package com.irctc.vo;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 public class StationVo implements Serializable{
 
@@ -9,7 +8,7 @@ public class StationVo implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 5007263025247497965L;
-	private BigInteger id;
+	private Integer id;
 	private String station_name;
 	
 	
@@ -22,17 +21,17 @@ public class StationVo implements Serializable{
 		this.station_name = station_name;
 	}
 
-	public StationVo(BigInteger id, String station_name) {
+	public StationVo(Integer id, String station_name) {
 		super();
 		this.id = id;
 		this.station_name = station_name;
 	}
 
-	public BigInteger getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(BigInteger id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

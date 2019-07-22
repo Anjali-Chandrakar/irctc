@@ -1,5 +1,4 @@
 package com.irctc.model;
-import java.math.BigInteger;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +12,7 @@ import javax.persistence.Table;
 public class Train implements java.io.Serializable{
 
 	private static final long serialVersionUID = 2836462165015149465L;
-	private BigInteger id;
+	private Integer id;
 	private String trainName;
 	private Integer capacity;
 
@@ -27,7 +26,7 @@ public class Train implements java.io.Serializable{
 		this.capacity = capacity;
 	}
 
-	public Train(BigInteger id, String trainName, Integer capacity) {
+	public Train(Integer id, String trainName, Integer capacity) {
 		super();
 		this.id = id;
 		this.trainName = trainName;
@@ -37,10 +36,10 @@ public class Train implements java.io.Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "id", unique = true, nullable = false)
-	public BigInteger getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(BigInteger id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	

@@ -52,8 +52,10 @@ public class UserServiceImpl implements UserService{
 			responseMap.put(Constants.MESSAGE, "email not be empty");
 			return responseMap;
 		}
+		
+		Boolean isAdmin =userVo.getIsAdmin();
 
-		User user = new User(email, name, age);
+		User user = new User(email, name, age, isAdmin);
 		User savedUser = userDao.save(user);
 
 		if (savedUser != null) {
@@ -86,7 +88,8 @@ public class UserServiceImpl implements UserService{
 			UserVo userVo = new UserVo(user.getId(), 
 					user.getEmail(),
 					user.getName(), 
-					user.getAge());
+					user.getAge(),
+					user.getIsAdmin());
 			responseMap.put(Constants.STATUS, Constants.STATUS_SUCCESS);
 			responseMap.put(Constants.MESSAGE, "user record found");
 			responseMap.put("user record: ", userVo);
@@ -178,7 +181,8 @@ public class UserServiceImpl implements UserService{
 					user.getId(), 
 					user.getEmail(),
 					user.getName(),
-					user.getAge());
+					user.getAge(),
+					user.getIsAdmin());
 			userVoList.add(userVo);
 		});
 		

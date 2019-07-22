@@ -1,14 +1,13 @@
 package com.irctc.vo;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 public class TrainVo implements Serializable{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5591221703485152012L;
-	private BigInteger id;
+	private Integer id;
 	private String trainName;
 	private Integer capacity;
 	
@@ -22,17 +21,17 @@ public class TrainVo implements Serializable{
 		this.capacity = capacity;
 	}
 	
-	public TrainVo(BigInteger id, String trainName, Integer capacity) {
+	public TrainVo(Integer id, String trainName, Integer capacity) {
 		super();
 		this.id = id;
 		this.trainName = trainName;
 		this.capacity = capacity;
 	}
 	
-	public BigInteger getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(BigInteger id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getTrainName() {

@@ -1,7 +1,6 @@
 package com.irctc.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,8 +13,11 @@ import javax.persistence.Table;
 @Table(name = "passenger")
 public class Passenger implements Serializable{
 
-	private static final long serialVersionUID = 7952203179917731421L;
-	private BigInteger id;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3904539254058302658L;
+	private Integer id;
 	private String name;
 	private String gender;
 	private int age;
@@ -31,7 +33,7 @@ public class Passenger implements Serializable{
 		this.age = age;
 	}
 
-	public Passenger(BigInteger id, String gender ,String name, int age) {
+	public Passenger(Integer id, String gender ,String name, int age) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -42,11 +44,11 @@ public class Passenger implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id")
-	public BigInteger getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(BigInteger id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	

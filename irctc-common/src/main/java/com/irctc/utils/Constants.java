@@ -15,4 +15,5 @@ public class Constants {
 	
 	public static final String IRCTC_BASE_URL = "/irctc-api";
 	public static final String IRCTC_USER = IRCTC_BASE_URL + "/user";
+	public static final String IRCTC_TRAIN = IRCTC_BASE_URL + "/train";
 }

@@ -16,8 +16,12 @@ import javax.persistence.Table;
 @Table(name = "berth_info")
 public class BerthInfo implements Serializable{
 
-	private static final long serialVersionUID = -6644622583836616781L;
-	private Long id;
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4349639900259040246L;
+	private Integer id;
 	private Train train;
 	private Ticket ticket;
 	private Passenger passenger;
@@ -37,7 +41,7 @@ public class BerthInfo implements Serializable{
 		this.isCancelled = isCancelled;
 	}
 
-	public BerthInfo(Long id, Train train, Ticket ticket, Passenger passenger, Integer seat, Boolean isCancelled) {
+	public BerthInfo(Integer id, Train train, Ticket ticket, Passenger passenger, Integer seat, Boolean isCancelled) {
 		super();
 		this.id = id;
 		this.train = train;
@@ -50,10 +54,10 @@ public class BerthInfo implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "id", unique = true, nullable = false)
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
