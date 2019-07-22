@@ -54,6 +54,12 @@ public class UserServiceImpl implements UserService{
 		}
 		
 		Boolean isAdmin =userVo.getIsAdmin();
+		if(isAdmin == null)
+		{
+			responseMap.put(Constants.STATUS, Constants.STATUS_ERROR);
+			responseMap.put(Constants.MESSAGE, "isAdmin feild not be empty");
+			return responseMap;	
+		}
 
 		User user = new User(email, name, age, isAdmin);
 		User savedUser = userDao.save(user);

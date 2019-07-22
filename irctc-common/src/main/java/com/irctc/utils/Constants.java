@@ -18,4 +18,5 @@ public class Constants {
 	public static final String IRCTC_TRAIN = IRCTC_BASE_URL + "/train";
 	public static final String IRCTC_STATION = IRCTC_BASE_URL + "/station";
 	public static final String IRCTC_SCHEDULE = IRCTC_BASE_URL + "/schedule";
+	public static final String IRCTC_PASSENGER = IRCTC_BASE_URL + "/passenger";
 }

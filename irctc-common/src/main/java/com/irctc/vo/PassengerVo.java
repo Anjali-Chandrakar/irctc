@@ -1,15 +1,10 @@
 package com.irctc.vo;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 public class PassengerVo implements Serializable{
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 705376114904240744L;
-	private BigInteger id;
+	private static final long serialVersionUID = 8916817489641960905L;
+	private Integer id;
 	private String name;
 	private String gender;
 	private Integer age;
@@ -22,17 +17,17 @@ public class PassengerVo implements Serializable{
 		this.gender = gender;
 		this.age = age;
 	}
-	public PassengerVo(BigInteger id, String name, String gender, Integer age) {
+	public PassengerVo(Integer id, String name, String gender, Integer age) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.gender = gender;
 		this.age = age;
 	}
-	public BigInteger getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(BigInteger id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {
