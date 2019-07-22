@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.irctc.dao.ScheduleDao;
 import com.irctc.dao.StationDao;
@@ -19,6 +20,7 @@ import com.irctc.service.ScheduleService;
 import com.irctc.utils.Constants;
 import com.irctc.vo.ScheduleVo;
 
+@Component
 public class ScheduleServiceImpl implements ScheduleService{
 	@Autowired
 	private ScheduleDao scheduleDao;

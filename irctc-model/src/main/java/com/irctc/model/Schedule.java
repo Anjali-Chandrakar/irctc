@@ -88,8 +88,8 @@ public class Schedule implements Serializable{
 		this.id = id;
 	}
 
-	@Column(name="station")
-//	@Enumerated(EnumType.STRING)
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn (name ="station_id")
 	public Station getStop() {
 		return stop;
 	}

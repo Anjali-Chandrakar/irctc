@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.irctc.dao.TrainDao;
 import com.irctc.model.Train;
@@ -15,7 +16,7 @@ import com.irctc.utils.Constants;
 import com.irctc.vo.TrainVo;
 
 @Component
-public class TranServiceImpl implements TrainService{
+public class TrainServiceImpl implements TrainService{
 
 	
 	@Autowired

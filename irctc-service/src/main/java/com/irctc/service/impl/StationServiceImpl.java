@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.irctc.dao.StationDao;
 import com.irctc.model.Station;
@@ -14,6 +15,7 @@ import com.irctc.service.StationService;
 import com.irctc.utils.Constants;
 import com.irctc.vo.StationVo;
 
+@Component
 public class StationServiceImpl implements StationService {
 
 	@Autowired
