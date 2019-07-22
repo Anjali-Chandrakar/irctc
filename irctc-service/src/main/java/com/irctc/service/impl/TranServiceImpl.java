@@ -14,7 +14,7 @@ import com.irctc.service.TrainService;
 import com.irctc.utils.Constants;
 import com.irctc.vo.TrainVo;
 
-
+@Component
 public class TranServiceImpl implements TrainService{
 
 	
