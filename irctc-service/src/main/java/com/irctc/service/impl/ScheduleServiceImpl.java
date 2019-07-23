@@ -75,7 +75,19 @@ public class ScheduleServiceImpl implements ScheduleService{
 	    
 	    LocalTime arrivalTime = scheduleVo.getArrivalTime();
 	    LocalTime departTime = scheduleVo.getDepartTime();
-		
+		if(arrivalTime == null)
+		{
+			responseMap.put(Constants.STATUS, Constants.STATUS_ERROR);
+			responseMap.put(Constants.MESSAGE, "arrivalTime can not be empty");
+			return responseMap;	
+		}
+		if(departTime == null)
+		{
+			responseMap.put(Constants.STATUS, Constants.STATUS_ERROR);
+			responseMap.put(Constants.MESSAGE, "departTime can not be empty");
+			return responseMap;	
+		}
+	    
 	    if(arrivalTime.isAfter(departTime))
 	    {
 	    	responseMap.put(Constants.STATUS, Constants.STATUS_ERROR);

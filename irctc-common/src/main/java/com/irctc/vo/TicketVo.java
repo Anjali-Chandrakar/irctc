@@ -1,36 +1,35 @@
 package com.irctc.vo;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.math.BigInteger;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class TicketVo implements Serializable{
-
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 5457133369667714927L;
-	private BigInteger id;
+	private static final long serialVersionUID = 2129604990352013288L;
+	private Integer id;
 	private Integer capacity;
-	private BigDecimal price;
-	private BigInteger userId;
-	private BigInteger trainId;
+	private Integer price;
+	private Integer userId;
+	private Integer trainId;
 	private LocalDateTime bookingDate;
 	private LocalDateTime journeyDate;
-	private LocalDateTime departureTime;
-	private LocalDateTime arrivalTime;
-	private BigInteger departureStationId;
-	private BigInteger arrivalStationId;
+	private LocalTime departureTime;
+	private LocalTime arrivalTime;
+	private Integer departureStationId;
+	private Integer arrivalStationId;
 	private Boolean isCancelled;
 	private LocalDateTime cancellationDate;
 	public TicketVo() {
 		super();
 	}
-	public TicketVo(Integer capacity, BigDecimal price, BigInteger userId, BigInteger trainId,
-			LocalDateTime bookingDate, LocalDateTime journeyDate, LocalDateTime departureTime,
-			LocalDateTime arrivalTime, BigInteger departureStationId, BigInteger arrivalStationId, Boolean isCancelled,
-			LocalDateTime cancellationDate) {
+	public TicketVo(Integer capacity, Integer price, Integer userId, Integer trainId, LocalDateTime bookingDate,
+			LocalDateTime journeyDate, LocalTime departureTime, LocalTime arrivalTime, Integer departureStationId,
+			Integer arrivalStationId, Boolean isCancelled, LocalDateTime cancellationDate) {
 		super();
 		this.capacity = capacity;
 		this.price = price;
@@ -45,10 +44,9 @@ public class TicketVo implements Serializable{
 		this.isCancelled = isCancelled;
 		this.cancellationDate = cancellationDate;
 	}
-	public TicketVo(BigInteger id, Integer capacity, BigDecimal price, BigInteger userId, BigInteger trainId,
-			LocalDateTime bookingDate, LocalDateTime journeyDate, LocalDateTime departureTime,
-			LocalDateTime arrivalTime, BigInteger departureStationId, BigInteger arrivalStationId, Boolean isCancelled,
-			LocalDateTime cancellationDate) {
+	public TicketVo(Integer id, Integer capacity, Integer price, Integer userId, Integer trainId,
+			LocalDateTime bookingDate, LocalDateTime journeyDate, LocalTime departureTime, LocalTime arrivalTime,
+			Integer departureStationId, Integer arrivalStationId, Boolean isCancelled, LocalDateTime cancellationDate) {
 		super();
 		this.id = id;
 		this.capacity = capacity;
@@ -64,10 +62,10 @@ public class TicketVo implements Serializable{
 		this.isCancelled = isCancelled;
 		this.cancellationDate = cancellationDate;
 	}
-	public BigInteger getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(BigInteger id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public Integer getCapacity() {
@@ -76,22 +74,22 @@ public class TicketVo implements Serializable{
 	public void setCapacity(Integer capacity) {
 		this.capacity = capacity;
 	}
-	public BigDecimal getPrice() {
+	public Integer getPrice() {
 		return price;
 	}
-	public void setPrice(BigDecimal price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
-	public BigInteger getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
-	public void setUserId(BigInteger userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
-	public BigInteger getTrainId() {
+	public Integer getTrainId() {
 		return trainId;
 	}
-	public void setTrainId(BigInteger trainId) {
+	public void setTrainId(Integer trainId) {
 		this.trainId = trainId;
 	}
 	public LocalDateTime getBookingDate() {
@@ -106,28 +104,28 @@ public class TicketVo implements Serializable{
 	public void setJourneyDate(LocalDateTime journeyDate) {
 		this.journeyDate = journeyDate;
 	}
-	public LocalDateTime getDepartureTime() {
+	public LocalTime getDepartureTime() {
 		return departureTime;
 	}
-	public void setDepartureTime(LocalDateTime departureTime) {
+	public void setDepartureTime(LocalTime departureTime) {
 		this.departureTime = departureTime;
 	}
-	public LocalDateTime getArrivalTime() {
+	public LocalTime getArrivalTime() {
 		return arrivalTime;
 	}
-	public void setArrivalTime(LocalDateTime arrivalTime) {
+	public void setArrivalTime(LocalTime arrivalTime) {
 		this.arrivalTime = arrivalTime;
 	}
-	public BigInteger getDepartureStationId() {
+	public Integer getDepartureStationId() {
 		return departureStationId;
 	}
-	public void setDepartureStationId(BigInteger departureStationId) {
+	public void setDepartureStationId(Integer departureStationId) {
 		this.departureStationId = departureStationId;
 	}
-	public BigInteger getArrivalStationId() {
+	public Integer getArrivalStationId() {
 		return arrivalStationId;
 	}
-	public void setArrivalStationId(BigInteger arrivalStationId) {
+	public void setArrivalStationId(Integer arrivalStationId) {
 		this.arrivalStationId = arrivalStationId;
 	}
 	public Boolean getIsCancelled() {
@@ -150,6 +148,7 @@ public class TicketVo implements Serializable{
 				+ departureStationId + ", arrivalStationId=" + arrivalStationId + ", isCancelled=" + isCancelled
 				+ ", cancellationDate=" + cancellationDate + "]";
 	}
+	
 	
 	
 }

@@ -2,8 +2,10 @@ package com.irctc.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,31 +19,27 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ticket")
 public class Ticket implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -257663748592351522L;
+	private static final long serialVersionUID = -191454783136156144L;
 	private Integer id;
 	private Integer capacity;
 	private Integer price;
 	private User user;
 	private Train train;
-	private LocalDate bookingDate;
-	private LocalDate journeyDate;
+	private LocalDateTime bookingDate;
+	private LocalDateTime journeyDate;
 	private LocalTime departureTime;
 	private LocalTime arrivalTime;
 	private Station departureStation;
 	private Station arrivalStation;
 	private Boolean isCancelled;
-	private LocalDate cancellationDate;
+	private LocalDateTime cancellationDate;
 
 	public Ticket() {
 	}
 
-	public Ticket(Integer capacity, Integer price, User user, Train train, LocalDate bookingDate,
-			LocalDate journeyDate, LocalTime departureTime, LocalTime arrivalTime, Station departureStation,
-			Station arrivalStation, Boolean isCancelled, LocalDate cancellationDate) {
+	public Ticket(Integer capacity, Integer price, User user, Train train, LocalDateTime bookingDate,
+			LocalDateTime journeyDate, LocalTime departureTime, LocalTime arrivalTime, Station departureStation,
+			Station arrivalStation, Boolean isCancelled, LocalDateTime cancellationDate) {
 		super();
 		this.capacity = capacity;
 		this.price = price;
@@ -57,9 +55,9 @@ public class Ticket implements Serializable {
 		this.cancellationDate = cancellationDate;
 	}
 
-	public Ticket(Integer id, Integer capacity, Integer price, User user, Train train, LocalDate bookingDate,
-			LocalDate journeyDate, LocalTime departureTime, LocalTime arrivalTime, Station departureStation,
-			Station arrivalStation, Boolean isCancelled, LocalDate cancellationDate) {
+	public Ticket(Integer id, Integer capacity, Integer price, User user, Train train, LocalDateTime bookingDate,
+			LocalDateTime journeyDate, LocalTime departureTime, LocalTime arrivalTime, Station departureStation,
+			Station arrivalStation, Boolean isCancelled, LocalDateTime cancellationDate) {
 		super();
 		this.id = id;
 		this.capacity = capacity;
@@ -121,18 +119,18 @@ public class Ticket implements Serializable {
 	}
 
 	@Column(name="booking_date", nullable=false)
-	public LocalDate getBookingDate() {
+	public LocalDateTime getBookingDate() {
 		return bookingDate;
 	}
-	public void setBookingDate(LocalDate bookingDate) {
+	public void setBookingDate(LocalDateTime bookingDate) {
 		this.bookingDate = bookingDate;
 	}
 
 	@Column(name="journey_date", nullable=false)
-	public LocalDate getJourneyDate() {
+	public LocalDateTime getJourneyDate() {
 		return journeyDate;
 	}
-	public void setJourneyDate(LocalDate journeyDate) {
+	public void setJourneyDate(LocalDateTime journeyDate) {
 		this.journeyDate = journeyDate;
 	}
 
@@ -152,7 +150,8 @@ public class Ticket implements Serializable {
 		this.arrivalTime = arrivalTime;
 	}
 
-	@Column(name="departure_station", nullable=false)
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn (name ="station_id")
 	public Station getDepartureStation() {
 		return departureStation;
 	}
@@ -160,7 +159,8 @@ public class Ticket implements Serializable {
 		this.departureStation = departureStation;
 	}
 
-	@Column(name="arrival_station", nullable=false)
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn (name ="arrival_station_id")
 	public Station getArrivalStation() {
 		return arrivalStation;
 	}
@@ -177,10 +177,10 @@ public class Ticket implements Serializable {
 	}
 	
 	@Column(name="cancellation_date", nullable=true)
-	public LocalDate getCancellationDate() {
+	public LocalDateTime getCancellationDate() {
 		return cancellationDate;
 	}
-	public void setCancellationDate(LocalDate cancellationDate) {
+	public void setCancellationDate(LocalDateTime cancellationDate) {
 		this.cancellationDate = cancellationDate;
 	}
 
